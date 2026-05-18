@@ -1,26 +1,174 @@
+<div align="center">
+
 # AI Evolution Skills
 
-Practical AI skills from **AI进化俱乐部**.
+**把好用的 AI 工作流，整理成可以直接复用的能力包。**  
+**Reusable AI capability packs for reading, writing, publishing, and everyday knowledge work.**
 
-This repository collects reusable skills, templates, and small scripts for turning repeatable AI workflows into shareable capability packs. The first public skill is a bilingual reader maker: it turns English PDFs or long articles into mobile-friendly Chinese-English study editions.
+[中文](#中文) · [English](#english)
 
-## Skills
+![License](https://img.shields.io/github/license/PhilRobinluo/ai-evolution-skills)
+![Skills](https://img.shields.io/badge/skills-1-blue)
+![Status](https://img.shields.io/badge/status-growing-brightgreen)
 
-| Skill | What it does | Status |
+</div>
+
+---
+
+## 中文
+
+很多人用 AI，问题不在于不会写提示词。
+
+真正的问题是：每次都从零开始。
+
+今天让 AI 翻译一份 PDF，明天让 AI 整理一篇文章，后天又想做一个可以分享的读物。每次都要重新解释背景、重新讲标准、重新调格式。时间久了，你会发现自己不是在用 AI 提效，而是在不断训练一个临时工。
+
+这个仓库想解决的是另一件事：
+
+> 把已经跑通的 AI 工作流，沉淀成一个个可以复用、可以安装、可以分享的「能力包」。
+
+它不是一个 prompt 大杂烩，也不是我的私人配置备份。  
+它更像一个逐步长出来的工具箱：每个能力包都应该能完成一个真实任务，并且有清楚的输入、输出、边界和使用方式。
+
+### 现在有什么？
+
+| 能力包 | 它解决什么问题 | 状态 |
 | --- | --- | --- |
-| [`bilingual-reader-maker`](skills/bilingual-reader-maker/) | Make polished bilingual HTML/PDF readers from English source materials. | Stable |
+| [`bilingual-reader-maker`](skills/bilingual-reader-maker/) | 把英文 PDF / 长文做成中英双语移动阅读版，输出 HTML + PDF。 | Stable |
 
-## Design Principles
+第一个能力包来自一个很具体的需求：  
+把一份英文创业手册，做成适合中文读者学习英语的双语读物。
 
-- **Useful first**: every skill should solve a real workflow, not just demonstrate prompts.
-- **Readable for humans**: outputs should be suitable for learners, students, and non-technical users.
-- **Mobile-first when possible**: GitHub is the source of truth, but beginner-facing outputs should be easy to open on a phone.
-- **No private baggage**: public skills should avoid local paths, private credentials, personal databases, and one-off machine assumptions.
-- **HTML as an editable source**: for publishing-style workflows, prefer real-text HTML that can be copied, searched, parsed, restyled, and exported to PDF.
+最后我们定下来的标准是：
 
-## Install A Skill
+- 保留原材料的视觉气质，比如封面、章节图、配色、图标。
+- 正文不强行左右分栏，而是手机友好的单栏阅读。
+- 英文一段，中文一段，方便查词、跟读、复制和解析。
+- HTML 是真文本，不是截图；PDF 从 HTML 导出，方便分发。
+- 署名放在文末，克制一点，不打扰阅读。
 
-Copy a skill folder into your Codex or Claude skills directory.
+### 为什么叫「能力包」？
+
+因为对普通使用者来说，`skill` 这个词还是太技术。
+
+他们真正关心的不是：
+
+```text
+这个 prompt 怎么写？
+这个 agent 怎么调用？
+这个脚本怎么跑？
+```
+
+他们关心的是：
+
+```text
+我给你一个英文 PDF，你能不能变成一份好看的双语读物？
+我有一批笔记，你能不能帮我整理成文章？
+我有一个工作流，能不能下次不用重新解释？
+```
+
+所以这里的每个 skill，都会尽量被打磨成一个「能力包」：  
+让 AI 不只是聊天，而是稳定地完成一类任务。
+
+### 安装
+
+如果你使用 Codex：
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R skills/bilingual-reader-maker ~/.codex/skills/
+```
+
+如果你使用 Claude Code：
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R skills/bilingual-reader-maker ~/.claude/skills/
+```
+
+然后开启新的会话，说：
+
+```text
+请用 bilingual-reader-maker，把这份英文 PDF 做成中英双语移动阅读版。
+```
+
+### 仓库原则
+
+```text
+GitHub 是真源
+手机/H5 是普通人的入口
+Skill/CLI 是进阶用户的工具层
+```
+
+这个仓库会优先保证三件事：
+
+- **可复用**：不是一次性的聊天记录，而是能重复执行的流程。
+- **可理解**：尽量讲人话，让非技术用户也知道它能干什么。
+- **可公开**：不放私人路径、账号密钥、个人数据库、微信文件路径和不可分享的材料。
+
+### 接下来
+
+这个仓库会慢慢加入更多能力包：
+
+- 双语读物制作
+- 文章与公众号发布准备
+- 知识库整理
+- 学习材料转 HTML / PDF
+- 面向普通人的 AI 工作流模板
+
+如果你只是想看热闹，可以先 Star。  
+如果你也在把自己的 AI 工作流产品化，欢迎 fork、改造，或者提 issue 分享你的场景。
+
+---
+
+## English
+
+Most people do not fail with AI because they lack prompts.
+
+They fail because every workflow starts from scratch.
+
+One day you ask AI to translate a PDF. The next day you ask it to turn an article into a shareable document. Then you need a mobile-friendly reader, a publishing checklist, or a reusable writing process. Each time, you explain the background again, restate the standard again, and fix the format again.
+
+This repository is built around a different idea:
+
+> Turn proven AI workflows into reusable capability packs.
+
+It is not a random prompt dump.  
+It is not a private config backup.  
+It is a growing library of practical skills that are meant to do real work.
+
+### What is inside?
+
+| Capability Pack | What it does | Status |
+| --- | --- | --- |
+| [`bilingual-reader-maker`](skills/bilingual-reader-maker/) | Turns English PDFs or long articles into polished Chinese-English mobile readers, with HTML and PDF output. | Stable |
+
+The first pack came from a concrete use case: turning an English startup playbook into a bilingual study edition for Chinese readers.
+
+The resulting standard is simple:
+
+- Keep the source material's visual identity when appropriate.
+- Do not force side-by-side columns when they hurt mobile reading.
+- Put the English paragraph first, then the Chinese translation.
+- Keep HTML as real text, so it can be copied, searched, parsed, and restyled.
+- Export PDF from HTML for easy sharing.
+
+### Why "capability packs"?
+
+Because most users do not care about the internal words: prompt, agent, script, tool call.
+
+They care about the job:
+
+```text
+Can you turn this PDF into a good bilingual reader?
+Can you convert my notes into a publishable article?
+Can we make this workflow reusable next time?
+```
+
+That is what each skill here is trying to become:  
+a reusable unit of work that makes AI more dependable.
+
+### Install
 
 For Codex:
 
@@ -36,19 +184,22 @@ mkdir -p ~/.claude/skills
 cp -R skills/bilingual-reader-maker ~/.claude/skills/
 ```
 
-Then start a new chat/session and ask for the skill by name, or describe the workflow naturally.
-
-## Repository Layout
+Then start a new session and ask:
 
 ```text
-skills/       Reusable skill packages
-templates/    HTML/document templates used by skills
-tools/        Small helper scripts for validation and packaging
-docs/         Notes on writing, publishing, and installing skills
-registry.json Machine-readable skill index
+Use bilingual-reader-maker to turn this English PDF into a Chinese-English mobile reader.
 ```
 
-## License
+### Direction
+
+```text
+GitHub is the source of truth.
+Mobile/H5 is the beginner-friendly front door.
+Skills and CLIs are the advanced working layer.
+```
+
+This repository will grow slowly, with a bias toward useful, understandable, and shareable workflows.
+
+### License
 
 MIT. See [LICENSE](LICENSE).
-
