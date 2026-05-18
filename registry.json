@@ -1,0 +1,15 @@
+{
+  "name": "ai-evolution-skills",
+  "description": "Reusable AI workflow skills from AI进化俱乐部.",
+  "skills": [
+    {
+      "name": "bilingual-reader-maker",
+      "title": "Bilingual Reader Maker",
+      "description": "Turn English PDFs or articles into polished Chinese-English HTML/PDF study readers.",
+      "category": "publishing",
+      "status": "stable",
+      "path": "skills/bilingual-reader-maker"
+    }
+  ]
+}
+
